@@ -11,13 +11,13 @@ source:
 
 build:
   number: 1
-  skip: True  # [not linux]
+  skip: True  # [py<37 or not linux]
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python
   run:
     - ansimarkup >=1.0.0
     - colorama >=0.4
@@ -28,7 +28,7 @@ requirements:
     - metomi-isodatetime >=1!2.0.1
     - protobuf >=3.7
     - pyasn1
-    - python >=3.7
+    - python
     - python-jose >=3.0
     - pyzmq >=18.0
 

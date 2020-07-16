@@ -5,7 +5,7 @@ Home: https://cylc.github.io/
 
 Package license: GPL-3.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A workflow engine for cycling systems
 

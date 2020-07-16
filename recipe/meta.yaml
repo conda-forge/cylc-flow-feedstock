@@ -33,6 +33,11 @@ requirements:
     - psutil >=5.6.0
     - pyzmq >=18.1.*
     - urwid ==2.*
+    # TODO: optional dependencies, see discussion here https://github.com/conda-forge/cylc-flow-feedstock/pull/4
+    - empy ==3.3.*
+    - pandas ==0.25.*
+    - pympler
+    - matplotlib
 
 test:
   imports:

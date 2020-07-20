@@ -10,7 +10,7 @@ source:
   sha256: 974480e2cee98071470ce8ca13eab600a32f213310b9fdc14a0b15ab6d50cb07
 
 build:
-  number: 1
+  number: 2
   skip: True  # [py<37 or not linux]
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
@@ -20,24 +20,24 @@ requirements:
     - python
   run:
     - ansimarkup >=1.0.0
+    - colorama >=0.4,<0.5
     - click >=7.0
-    - colorama >=0.4
     - cryptography
-    - graphene ==2.1.6
-    - jinja2 >=2.10.1
-    - markupsafe >=1.1
-    - metomi-isodatetime ==1!2.0.2
+    - graphene >=2.1,<3
+    - jinja2 ==2.11.0,<2.12
+    - metomi-isodatetime ==1!2.0.1
     - protobuf ==3.12.1
     - pyasn1
     - python
+    - pyzmq >=18.1.0,<18.2.0
     - psutil >=5.6.0
-    - pyzmq >=18.1.*
-    - urwid ==2.*
+    - urwid >=2.0,<2.1
     # TODO: optional dependencies, see discussion here https://github.com/conda-forge/cylc-flow-feedstock/pull/4
-    - empy ==3.3.*
-    - pandas ==0.25.*
+    - empy >=3.3,<3.4
+    - pandas >=0.25.0,<0.26
     - pympler
     - matplotlib-base
+    - rx >=1.6,<2 # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268
 
 test:
   imports:

@@ -52,6 +52,12 @@ outputs:
         - python
         - {{ pin_subpackage("cylc-flow-base", exact=True) }}
         - empy >=3.3,<3.4
+    test:
+      imports:
+        - cylc.flow
+        - empy
+      commands:
+        - cylc --version
   - name: cylc-flow-report-timings
     requirements:
       host:
@@ -61,6 +67,12 @@ outputs:
         - python
         - {{ pin_subpackage("cylc-flow-base", exact=True) }}
         - pandas >=0.25.0,<0.26
+    test:
+      imports:
+        - cylc.flow
+        - pandas
+      commands:
+        - cylc --version
   - name: cylc-flow-main_loop
     requirements:
       host:
@@ -71,6 +83,13 @@ outputs:
         - {{ pin_subpackage("cylc-flow-base", exact=True) }}
         - pympler
         - matplotlib-base
+    test:
+      imports:
+        - cylc.flow
+        - matplotlib
+        - pympler
+      commands:
+        - cylc --version
 
 
 about:

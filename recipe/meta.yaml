@@ -21,7 +21,7 @@ requirements:
   run:
     - aiofiles >=0.5.0,<0.6.0
     - ansimarkup >=1.0.0
-    - colorama >=0.4,<0.5
+    - colorama >=0.4,<1
     - click >=7.0
     - cryptography
     - graphene >=2.1,<3

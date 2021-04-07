@@ -14,7 +14,7 @@ build:
 
 outputs:
   - name: cylc-flow-base
-    script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+    script: $PYTHON -m pip install . --no-deps --ignore-installed -vv
     build:
       skip: True  # [py<37 or not linux]
     requirements:

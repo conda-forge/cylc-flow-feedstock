@@ -11,11 +11,12 @@ source:
 
 build:
   number: 2
-  skip: True  # [py<37 or not linux]
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 outputs:
   - name: cylc-flow-base
+    script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+    build:
+      skip: True  # [py<37 or not linux]
     requirements:
       host:
         - pip
@@ -44,6 +45,8 @@ outputs:
       commands:
         - cylc --version
   - name: cylc-flow-empy
+    build:
+      skip: True  # [py<37 or not linux]
     requirements:
       host:
         - pip
@@ -59,6 +62,8 @@ outputs:
       commands:
         - cylc --version
   - name: cylc-flow-report-timings
+    build:
+      skip: True  # [py<37 or not linux]
     requirements:
       host:
         - pip
@@ -74,6 +79,8 @@ outputs:
       commands:
         - cylc --version
   - name: cylc-flow-main_loop
+    build:
+      skip: True  # [py<37 or not linux]
     requirements:
       host:
         - pip

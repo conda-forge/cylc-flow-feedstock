@@ -14,7 +14,7 @@ build:
 
 outputs:
   - name: cylc-flow-base
-    script: $PYTHON -m pip install . --no-deps --ignore-installed -vv
+    script: build_base.sh  # [not win]
     build:
       skip: True  # [py<37 or not linux]
     requirements:

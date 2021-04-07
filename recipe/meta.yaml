@@ -18,6 +18,9 @@ outputs:
     build:
       skip: True  # [py<37 or not linux]
     requirements:
+      build:
+        - pip
+        - python
       host:
         - pip
         - python

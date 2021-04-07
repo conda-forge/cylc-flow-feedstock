@@ -61,7 +61,7 @@ outputs:
     test:
       imports:
         - cylc.flow
-        - empy
+        - em
       commands:
         - cylc --version
   - name: cylc-flow-report-timings

@@ -1,17 +1,17 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.0b2" %}
+{% set version = "8.0b3" %}
 
 package:
   name: {{ name|lower }}
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: db5ed370ac520a6de4321afa92aacaf3ca47d82b338ca41407402cca3b1985e9
+  sha256: 8b694afb63f66ce4d9268e920f76a0c4d43d11f70efed4e3e0ff0f52928b5db4
 
 build:
   number: 0
-  skip: True  # [py<37 or not unix]
+  skip: true  # [py<37 or not unix]
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
@@ -49,7 +49,7 @@ about:
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'A workflow engine for cycling systems'
+  summary: A workflow engine for cycling systems
   description: |
     Cylc ("silk") orchestrates complex distributed suites of interdependent
     cycling (or non-cycling) tasks. It was originally designed to automate

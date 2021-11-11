@@ -12,50 +12,73 @@ source:
 build:
   number: 0
   skip: true  # [py<37 or not unix]
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
     - pip
     - python
   run:
-    - aiofiles >=0.7.0,<0.8.0
-    - ansimarkup >=1.0.0
-    - colorama >=0.4,<1.0
-    - graphene >=2.1,<3
-    - jinja2 ==2.11.0,<2.12
-    - metomi-isodatetime >=1!2.0.2, <1!2.1.0
-    - protobuf >=3.15.0,<3.16.0
-    - psutil >=5.6.0
     - python
-    - pyuv >=1.4.0,<1.5.0
-    - pyzmq >=19.0.0,<19.1.0
-    - setuptools >=49
-    - urwid >=2,<3
-    # TODO: optional dependencies, see discussion here https://github.com/conda-forge/cylc-flow-feedstock/pull/4
-    - empy >=3.3,<3.4
-    - pandas >=1.0
-    - pympler
-    - matplotlib-base
 
 test:
   imports:
     - cylc.flow
   commands:
     - cylc --version
+    - cylc version --long
+    - cylc extract-resources etc/job.sh  # check packaging of non-python files
+
+outputs:
+  # base package with only required dependencies
+  - name: {{ name }}-base
+    build:
+      script: python -m pip install . --no-deps --ignore-installed -vv
+    requirements:
+      host:
+        - pip
+        - python
+      run:
+        - python
+        - aiofiles >=0.7.0,<0.8.0
+        - ansimarkup >=1.0.0
+        - colorama >=0.4,<1.0
+        - graphene >=2.1,<3
+        - jinja2 ==2.11.0,<2.12
+        - metomi-isodatetime >=1!2.0.2, <1!2.1.0
+        - protobuf >=3.15.0,<3.16.0
+        - psutil >=5.6.0
+        - pyuv >=1.4.0,<1.5.0
+        - pyzmq >=19.0.0,<19.1.0
+        - setuptools >=49
+        - urwid >=2,<3
+
+  # full package with all dependencies installed
+  - name: {{ name }}
+    build:
+      script: python -m pip install .[empy,report-timings] --no-deps --ignore-installed -vv
+    requirements:
+      host:
+        - pip
+        - python
+      run:
+        - python
+        - {{ pin_subpackage(name + "-base", exact=True) }}
+        - empy >=3.3,<3.4
+        - graphviz  # for static graphing
+        - pandas >=1.0,<2
+        - matplotlib-base
 
 about:
-  home: https://cylc.github.io/
+  home: https://cylc.org/
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE.txt
   summary: A workflow engine for cycling systems
   description: |
-    Cylc ("silk") orchestrates complex distributed suites of interdependent
-    cycling (or non-cycling) tasks. It was originally designed to automate
-    environmental forecasting systems at NIWA, however Cylc is a general
-    workflow engine; it is not specialized to forecasting in any way.
-  doc_url: https://cylc.github.io/documentation.html
+    Cylc ("silk") is a workflow engine for cycling systems - it orchestrates
+    distributed workflows of interdependent cycling tasks that may continue to
+    run indefinitely.
+  doc_url: https://cylc.github.io/cylc-doc/
   dev_url: https://github.com/cylc/cylc-flow
 
 extra:

@@ -12,11 +12,13 @@ source:
 build:
   noarch: python
   number: 0
+  skip: true  # [win]
 
 requirements:
   host:
     - pip
     - python
+    - libuv
   run:
     - python
 
@@ -37,6 +39,7 @@ outputs:
       host:
         - pip
         - python
+        - libuv
       run:
         - python
         - aiofiles >=0.7.0,<0.8.0
@@ -59,6 +62,7 @@ outputs:
     requirements:
       host:
         - pip
+        - libuv
         - python
       run:
         - python

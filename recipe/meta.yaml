@@ -10,8 +10,8 @@ source:
   sha256: 8b694afb63f66ce4d9268e920f76a0c4d43d11f70efed4e3e0ff0f52928b5db4
 
 build:
+  noarch: python
   number: 0
-  skip: true  # [py<37 or not unix]
 
 requirements:
   host:
@@ -32,7 +32,7 @@ outputs:
   # base package with only required dependencies
   - name: {{ name }}-base
     build:
-      script: python -m pip install . --no-deps --ignore-installed -vv
+      script: {{ PYTHON }} -m pip install . -vv
     requirements:
       host:
         - pip
@@ -55,7 +55,7 @@ outputs:
   # full package with all dependencies installed
   - name: {{ name }}
     build:
-      script: python -m pip install .[empy,report-timings] --no-deps --ignore-installed -vv
+      script: {{ PYTHON }} -m pip install . -vv
     requirements:
       host:
         - pip

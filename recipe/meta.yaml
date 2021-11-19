@@ -13,6 +13,8 @@ build:
   noarch: python
   number: 1
 
+# ngam (20211119): adding libuv as backup for pyuv problems
+
 requirements:
   host:
     - pip
@@ -91,3 +93,4 @@ extra:
     - hjoliver
     - kinow
     - oliver-sanders
+    - ngam

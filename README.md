@@ -1,7 +1,7 @@
 About cylc-flow
 ===============
 
-Home: https://cylc.github.io/
+Home: https://cylc.org/
 
 Package license: GPL-3.0-only
 
@@ -11,12 +11,11 @@ Summary: A workflow engine for cycling systems
 
 Development: https://github.com/cylc/cylc-flow
 
-Documentation: https://cylc.github.io/documentation.html
+Documentation: https://cylc.github.io/cylc-doc/
 
-Cylc ("silk") orchestrates complex distributed suites of interdependent
-cycling (or non-cycling) tasks. It was originally designed to automate
-environmental forecasting systems at NIWA, however Cylc is a general
-workflow engine; it is not specialized to forecasting in any way.
+Cylc ("silk") is a workflow engine for cycling systems - it orchestrates
+distributed workflows of interdependent cycling tasks that may continue to
+run indefinitely.
 
 
 Current build status
@@ -92,6 +91,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cylc--flow-green.svg)](https://anaconda.org/conda-forge/cylc-flow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cylc-flow.svg)](https://anaconda.org/conda-forge/cylc-flow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cylc-flow.svg)](https://anaconda.org/conda-forge/cylc-flow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cylc-flow.svg)](https://anaconda.org/conda-forge/cylc-flow) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cylc--flow--base-green.svg)](https://anaconda.org/conda-forge/cylc-flow-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cylc-flow-base.svg)](https://anaconda.org/conda-forge/cylc-flow-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cylc-flow-base.svg)](https://anaconda.org/conda-forge/cylc-flow-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cylc-flow-base.svg)](https://anaconda.org/conda-forge/cylc-flow-base) |
 
 Installing cylc-flow
 ====================
@@ -103,10 +103,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cylc-flow` can be installed with:
+Once the `conda-forge` channel has been enabled, `cylc-flow, cylc-flow-base` can be installed with:
 
 ```
-conda install cylc-flow
+conda install cylc-flow cylc-flow-base
 ```
 
 It is possible to list all of the versions of `cylc-flow` available on your platform with:
@@ -183,7 +183,4 @@ Feedstock Maintainers
 * [@hjoliver](https://github.com/hjoliver/)
 * [@kinow](https://github.com/kinow/)
 * [@oliver-sanders](https://github.com/oliver-sanders/)
-
-
-<!-- dummy commit to enable rerendering -->
 

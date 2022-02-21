@@ -10,7 +10,7 @@ source:
   sha256: 7aee0148af3336694ea18b6b49e020fabe7109dc6e604b0836e4d6f83d83cfe1
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -57,6 +57,10 @@ outputs:
         - pyzmq >=22,<23
         - setuptools >=49
         - urwid >=2,<3
+
+        # https://github.com/pallets/jinja/issues/1585 (remove when upgrading
+        # jinja2 to >= 3.0):
+        - markupsafe <2.1
 
   # full package with all dependencies installed
   # (excluding tests, developer extensions, etc)

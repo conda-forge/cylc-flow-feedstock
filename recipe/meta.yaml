@@ -57,6 +57,9 @@ outputs:
         - pyzmq >=22,<23
         - setuptools >=49
         - urwid >=2,<3
+        # non-pinned transient dependencies used for type checking
+        - rx
+        - promise
 
         # https://github.com/pallets/jinja/issues/1585 (remove when upgrading
         # jinja2 to >= 3.0):

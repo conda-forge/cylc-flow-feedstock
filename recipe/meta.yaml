@@ -23,12 +23,15 @@ requirements:
     - python >=3.7
 
 test:
+  files:
+    - tests/simple-datetime/flow.cylc
   imports:
     - cylc.flow
   commands:
     - cylc --version
     - cylc version --long
     - cylc get-resources job.sh  # check packaging of non-python files
+    - cylc validate ./tests/simple-datetime
 
 outputs:
   # base package with only required dependencies

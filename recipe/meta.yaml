@@ -61,10 +61,6 @@ outputs:
         - rx
         - promise
 
-        # https://github.com/pallets/jinja/issues/1585 (remove when upgrading
-        # jinja2 to >= 3.0):
-        - markupsafe <2.1
-
   # full package with all dependencies installed
   # (excluding tests, developer extensions, etc)
   - name: {{ name }}

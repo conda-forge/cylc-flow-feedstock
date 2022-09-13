@@ -79,15 +79,16 @@ outputs:
         - __unix
         - python >=3.7
         - {{ pin_subpackage(name + "-base", exact=True) }}
+        # Dependencies for the `pip install` command above:
         - empy >=3.3,<3.4
         # static graphing
         - graphviz
+        - pillow
         # report-timings
         - pandas >=1.0,<2
         - matplotlib-base
         # tutorials
-        - pillow
-        - urllib3
+        - requests
 
 about:
   home: https://cylc.org/

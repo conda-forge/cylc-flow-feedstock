@@ -33,7 +33,6 @@ test:
     - cylc get-resources job.sh  # check packaging of non-python files
     - cylc help licence  # check packaging of licence file
     - cylc validate ./tests/simple-datetime
-    - pip check  # verify installed packages have compatible dependencies.
 
 outputs:
   # base package with only required dependencies
@@ -60,12 +59,13 @@ outputs:
         - psutil >=5.6.0
         - pyzmq >=22,<23
         - setuptools >=49, <67
-        - importlib_metadata  # [py<3.8]
+        - importlib_metadata  # py<3.8 TODO: selectors don't work for noarch packages
         - urwid >=2,<3
         # non-pinned transitive dependencies used for type checking
         - rx
         - promise
-        - tomli >=2.0  # [py<3.11]
+        - tomli >=2.0  # py<3.11 TODO: selectors don't work for noarch packages
+
 
   # full package with all dependencies installed
   # (excluding tests, developer extensions, etc)

@@ -17,10 +17,10 @@ requirements:
   host:
     - __unix
     - pip
-    - python >=3.7
+    - python >=3.7, <3.11
   run:
     - __unix
-    - python >=3.7
+    - python >=3.7, <3.11
 
 test:
   files:
@@ -31,7 +31,9 @@ test:
     - cylc --version
     - cylc version --long
     - cylc get-resources job.sh  # check packaging of non-python files
+    - cylc help licence  # check packaging of licence file
     - cylc validate ./tests/simple-datetime
+    - pip check  # verify installed packages have compatible dependencies.
 
 outputs:
   # base package with only required dependencies
@@ -43,10 +45,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7
+        - python >=3.7, <3.11
       run:
         - __unix
-        - python >=3.7
+        - python >=3.7, <3.11
         - aiofiles >=0.7.0,<0.8.0
         - ansimarkup >=1.0.0
         - async-timeout >=3.0.0
@@ -74,10 +76,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7
+        - python >=3.7, <3.11
       run:
         - __unix
-        - python >=3.7
+        - python >=3.7, <3.11
         - {{ pin_subpackage(name + "-base", exact=True) }}
         # Dependencies for the `pip install` command above:
         - empy >=3.3,<3.4

@@ -60,11 +60,12 @@ outputs:
         - psutil >=5.6.0
         - pyzmq >=22,<23
         - setuptools >=49, <67
+        - importlib_metadata  # [py<3.8]
         - urwid >=2,<3
         # non-pinned transitive dependencies used for type checking
         - rx
         - promise
-        - tomli >=2.0, <3.0
+        - tomli >=2.0  # [py<3.11]
 
   # full package with all dependencies installed
   # (excluding tests, developer extensions, etc)

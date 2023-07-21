@@ -1,5 +1,5 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.1.4" %}
+{% set version = "8.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d1835ac18f6f24f3115c56b2bc821185484e834a86b12fd0033ff7e4dc3c1f63
+  sha256: cbe35e0d72d1ca36f28a4cebe9b9040a3445a74253bc94051a3c906cf179ded0
 
 build:
   number: 0
@@ -17,10 +17,10 @@ requirements:
   host:
     - __unix
     - pip
-    - python >=3.7, <3.11
+    - python >=3.7, <3.12
   run:
     - __unix
-    - python >=3.7, <3.11
+    - python >=3.7, <3.12
 
 test:
   files:
@@ -44,11 +44,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7, <3.11
+        - python >=3.7, <3.12
       run:
         - __unix
-        - python >=3.7, <3.11
-        - aiofiles >=0.7.0,<0.8.0
+        - python >=3.7, <3.12
         - ansimarkup >=1.0.0
         - async-timeout >=3.0.0
         - colorama >=0.4,<1.0
@@ -57,8 +56,8 @@ outputs:
         - metomi-isodatetime >=1!3.0.0, <1!3.1.0
         - protobuf >=4.21.2,<4.22.0
         - psutil >=5.6.0
-        - pyzmq >=22,<23
-        - setuptools >=49, <67
+        - pyzmq >=22
+        - setuptools >=49,!=67
         - importlib_metadata  # py<3.8 TODO: selectors don't work for noarch packages
         - urwid >=2,<3
         # non-pinned transitive dependencies used for type checking
@@ -77,10 +76,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7, <3.11
+        - python >=3.7, <3.12
       run:
         - __unix
-        - python >=3.7, <3.11
+        - python >=3.7, <3.12
         - {{ pin_subpackage(name + "-base", exact=True) }}
         # Dependencies for the `pip install` command above:
         - empy >=3.3,<3.4

@@ -1,5 +1,5 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.2.0" %}
+{% set version = "8.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cbe35e0d72d1ca36f28a4cebe9b9040a3445a74253bc94051a3c906cf179ded0
+  sha256: b42693ed0d6b2c1b9cf4d8d3aa6cd6929202391967f6f554e74bd53298ec918b
 
 build:
   number: 0
@@ -17,10 +17,10 @@ requirements:
   host:
     - __unix
     - pip
-    - python >=3.7, <3.12
+    - python >=3.7
   run:
     - __unix
-    - python >=3.7, <3.12
+    - python >=3.7
 
 test:
   files:
@@ -44,10 +44,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7, <3.12
+        - python >=3.7
       run:
         - __unix
-        - python >=3.7, <3.12
+        - python >=3.7
         - ansimarkup >=1.0.0
         - async-timeout >=3.0.0
         - colorama >=0.4,<1.0
@@ -76,10 +76,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7, <3.12
+        - python >=3.7
       run:
         - __unix
-        - python >=3.7, <3.12
+        - python >=3.7
         - {{ pin_subpackage(name + "-base", exact=True) }}
         # Dependencies for the `pip install` command above:
         - empy >=3.3,<3.4

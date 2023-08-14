@@ -17,10 +17,10 @@ requirements:
   host:
     - __unix
     - pip
-    - python >=3.7, <3.12
+    - python >=3.7
   run:
     - __unix
-    - python >=3.7, <3.12
+    - python >=3.7
 
 test:
   files:
@@ -44,10 +44,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7, <3.12
+        - python >=3.7
       run:
         - __unix
-        - python >=3.7, <3.12
+        - python >=3.7
         - ansimarkup >=1.0.0
         - async-timeout >=3.0.0
         - colorama >=0.4,<1.0
@@ -76,10 +76,10 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7, <3.12
+        - python >=3.7
       run:
         - __unix
-        - python >=3.7, <3.12
+        - python >=3.7
         - {{ pin_subpackage(name + "-base", exact=True) }}
         # Dependencies for the `pip install` command above:
         - empy >=3.3,<3.4

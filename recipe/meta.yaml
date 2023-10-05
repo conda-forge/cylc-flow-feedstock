@@ -1,5 +1,5 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.2.1" %}
+{% set version = "8.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b42693ed0d6b2c1b9cf4d8d3aa6cd6929202391967f6f554e74bd53298ec918b
+  sha256: 10e867932c31d756d73517723dd8aadfef5d81f81892a9344009a89e3d227789
 
 build:
   number: 0

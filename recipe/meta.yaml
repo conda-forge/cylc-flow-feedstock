@@ -1,5 +1,5 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.2.2" %}
+{% set version = "8.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 10e867932c31d756d73517723dd8aadfef5d81f81892a9344009a89e3d227789
+  sha256: dd5bea9e4b8dad00edd9c3459a38fb778e5a073da58ad2725bc9b84ad718e073
 
 build:
   number: 0
@@ -53,7 +53,7 @@ outputs:
         - colorama >=0.4,<1.0
         - graphene >=2.1,<3
         - jinja2 >=3.0,<3.1
-        - metomi-isodatetime >=1!3.0.0, <1!3.1.0
+        - metomi-isodatetime >=1!3.0.0, <1!3.2.0
         - protobuf >=4.21.2,<4.22.0
         - psutil >=5.6.0
         - pyzmq >=22

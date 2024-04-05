@@ -1,5 +1,5 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.2.4" %}
+{% set version = "8.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 70f096849b4dc4db1c8a2283d4223cf2a2174095059ea4075acec212d246326d
+  sha256: ee73e7593dc31747d021628a147c9107ca8a0b9a79d5ff43d14aece0932a2cc5
 
 build:
   number: 0
@@ -59,7 +59,8 @@ outputs:
         - pyzmq >=22
         - setuptools >=49,!=67
         - importlib_metadata  # py<3.8 TODO: selectors don't work for noarch packages
-        - urwid >=2,<3
+        - urwid >=2,<3,!=2.6.2,!=2.6.3
+
         # non-pinned transitive dependencies used for type checking
         - rx
         - promise

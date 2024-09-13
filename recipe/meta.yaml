@@ -1,5 +1,5 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.3.3" %}
+{% set version = "8.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: d88243e7209e94355f5a9c27ada86b718e8ead926048c50b3142df26a7ec3b4c
+  sha256: bdc289ba9910a55336febe62dac1562cc822e0dd58de4191a7d4ce9618542780
 
 build:
   number: 0
@@ -18,6 +18,7 @@ requirements:
     - __unix
     - pip
     - python >=3.7
+    - setuptools
   run:
     - __unix
     - python >=3.7
@@ -45,6 +46,7 @@ outputs:
         - __unix
         - pip
         - python >=3.7
+        - setuptools
       run:
         - __unix
         - python >=3.7
@@ -78,6 +80,7 @@ outputs:
         - __unix
         - pip
         - python >=3.7
+        - setuptools
       run:
         - __unix
         - python >=3.7

@@ -6,24 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 43ddda5fa047a6cd19bd1eea6e7ece028f9d535eecce004203a46c7c135d2d8c
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   host:
     - __unix
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
     - __unix
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   files:
     - tests/simple-datetime/flow.cylc
   imports:
@@ -45,11 +47,11 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7
+        - python {{ python_min }}
         - setuptools
       run:
         - __unix
-        - python >=3.7
+        - python >={{ python_min }}
         - ansimarkup >=1.0.0
         - async-timeout >=3.0.0
         - colorama >=0.4,<1.0
@@ -79,11 +81,11 @@ outputs:
       host:
         - __unix
         - pip
-        - python >=3.7
+        - python {{ python_min }}
         - setuptools
       run:
         - __unix
-        - python >=3.7
+        - python >={{ python_min }}
         - {{ pin_subpackage(name + "-base", exact=True) }}
         # Dependencies for the `pip install` command above:
         - empy >=3.3,<3.4

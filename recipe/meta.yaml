@@ -75,7 +75,7 @@ outputs:
   # (excluding tests, developer extensions, etc)
   - name: {{ name }}
     build:
-      script: python -m pip install .[empy,report-timings,tutorials,graph] --no-deps --ignore-installed -vv
+      script: python -m pip install .[report-timings,tutorials,graph] --no-deps --ignore-installed -vv
       noarch: python
     requirements:
       host:
@@ -88,7 +88,6 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage(name + "-base", exact=True) }}
         # Dependencies for the `pip install` command above:
-        - empy >=3.3,<3.4
         # static graphing
         - graphviz
         - pillow

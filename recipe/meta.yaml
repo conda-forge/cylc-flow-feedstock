@@ -1,5 +1,5 @@
 {% set name = "cylc-flow" %}
-{% set version = "8.3.6" %}
+{% set version = "8.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 43ddda5fa047a6cd19bd1eea6e7ece028f9d535eecce004203a46c7c135d2d8c
+  sha256: d3a6c644f1be8564131794f885f616aa31d68f8ed4887872b070ac8933f64936
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
@@ -75,7 +75,7 @@ outputs:
   # (excluding tests, developer extensions, etc)
   - name: {{ name }}
     build:
-      script: python -m pip install .[empy,report-timings,tutorials,graph] --no-deps --ignore-installed -vv
+      script: python -m pip install .[report-timings,tutorials,graph] --no-deps --ignore-installed -vv
       noarch: python
     requirements:
       host:
@@ -88,7 +88,6 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage(name + "-base", exact=True) }}
         # Dependencies for the `pip install` command above:
-        - empy >=3.3,<3.4
         # static graphing
         - graphviz
         - pillow

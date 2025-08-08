@@ -17,6 +17,16 @@ Cylc ("silk") is a workflow engine for cycling systems - it orchestrates
 distributed workflows of interdependent cycling tasks that may continue to
 run indefinitely.
 
+There are two cylc-flow packages:
+* `cylc-flow`: The full installation, recommended for most uses.
+* `cylc-flow-base`: A minimal package, recommended for installation on job
+  hosts where the full range of user-facing commands is not required.
+
+The `cylc report-timings` command requires two additional dependencies
+which you must specify manually if you want this functionality:
+* `pandas >=1.0,<2`
+* `matplotlib-base`
+
 
 Current build status
 ====================
@@ -156,7 +166,4 @@ Feedstock Maintainers
 * [@MetRonnie](https://github.com/MetRonnie/)
 * [@hjoliver](https://github.com/hjoliver/)
 * [@oliver-sanders](https://github.com/oliver-sanders/)
-
-
-<!-- dummy commit to enable rerendering -->
 

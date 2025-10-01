@@ -1,5 +1,3 @@
-cdt_name:
-- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -9,4 +7,4 @@ docker_image:
 graphviz:
 - '13'
 python_min:
-- '3.8'
+- '3.12'

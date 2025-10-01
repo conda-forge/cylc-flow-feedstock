@@ -7,4 +7,4 @@ docker_image:
 graphviz:
 - '13'
 python_min:
-- '3.8'
+- '3.12'

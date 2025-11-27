@@ -87,6 +87,7 @@ outputs:
 
         # tutorials
         - requests
+        - h5py
 
 about:
   home: https://cylc.org/

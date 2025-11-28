@@ -10,7 +10,7 @@ source:
   sha256: e4e181006aa90197f5d7e39da4a1232e0393b8c10d497ec5b9d7663cb92cc1e0
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -62,7 +62,7 @@ outputs:
         - protobuf >=5,<8
         - psutil >=5.6.0
         - pyzmq >=22
-        - urwid >=2.2,<3,!=2.6.2,!=2.6.3
+        - urwid >=2.2,<4,!=2.6.2,!=2.6.3
 
   # full package with all dependencies installed
   # (excluding tests, developer extensions, etc)

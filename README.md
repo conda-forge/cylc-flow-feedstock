@@ -24,7 +24,7 @@ There are two cylc-flow packages:
 
 The `cylc report-timings` command requires two additional dependencies
 which you must specify manually if you want this functionality:
-* `pandas >=1.0,<2`
+* `pandas >=2,<4`
 * `matplotlib-base`
 
 
